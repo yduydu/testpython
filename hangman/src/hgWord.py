@@ -1,5 +1,6 @@
 class hgWord():
 	def __init__(self, word):
+		assert word.isalpha()
 		self.word = word.lower()
 		self.nbLettersLeft = len(word) 
 		self.foundLetters = set()
@@ -12,7 +13,7 @@ class hgWord():
 			self.foundLetters.add(letter)
 			self.nbLettersLeft -= self.word.count(letter)
 		else:
-			return "not in the word"
+			return "letter not in the word"
 		if self.nbLettersLeft == 0:
 			return f"word found in {self.nbTry} try"
 		else:
@@ -26,35 +27,3 @@ class hgWord():
 			else:
 				displayWord = displayWord + "_ "
 		return displayWord
-		
-		
-# basic unit test		
-if __name__ == "__main__":
-	testWord = hgWord("test")
-	dw = testWord.displayWord()
-	print(dw)
-	assert dw == "_ _ _ _ "
-	
-	print("test letter T")
-	gl = testWord.guessLetter('t')
-	dw = testWord.displayWord()
-	print(gl)
-	print(dw)
-
-	print("test letter A")
-	gl = testWord.guessLetter('a')
-	dw = testWord.displayWord()
-	print(gl)
-	print(dw)
-	
-	print("test letter S")
-	gl = testWord.guessLetter('s')
-	dw = testWord.displayWord()	
-	print(gl)
-	print(dw)
-			
-	print("test letter E")
-	gl = testWord.guessLetter('e')
-	dw = testWord.displayWord()	
-	print(gl)
-	print(dw)
