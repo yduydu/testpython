@@ -1,3 +1,8 @@
+#-------- MY FILES
+runTests.sh
+
+
+#-------- FROM PYTHON GITIGNORE in git
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
